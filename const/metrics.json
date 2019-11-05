@@ -1,0 +1,17 @@
+{
+    "bodiesDefaults": {
+        "perihelion": "km",
+        "aphelion": "km"
+    },
+    "km": {
+        "toMile": 0.621371
+    },
+    "distanceLabels": {
+        "mile": "mi",
+        "miles": "mi",
+        "kilometer": "km",
+        "kilometers": "km",
+        "meter": "m",
+        "meters": "m"
+    }
+}
