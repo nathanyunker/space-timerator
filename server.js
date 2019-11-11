@@ -30,6 +30,13 @@ var schema = buildSchema(`
     }
     type Moon {
         name: String
+        id: String
+        perihelion: Float
+        aphelion:Float
+        gravity: Float
+        escape: Float
+        mass: Mass
+        volume: Volume
     }
     type Mass {
         massValue: Float
