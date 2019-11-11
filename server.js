@@ -1,52 +1,11 @@
 var express = require('express');
 var express_graphql = require('express-graphql');
-var { buildSchema } = require('graphql');
 var solaire = require('./apis/solaire');
 var metrics = require('./const/metrics');
 var bodiesCacheDict = require('./bodies_cache_dict.json');
+const schema = require('./schema');
 const { snakecaseName } = require('./utils/format');
 const _ = require('lodash');
-
-var schema = buildSchema(`
-    type Query {
-        distance(target: String!, location: String!, metric: String!): Distance
-        bodies(name: String!): [Body]
-        body(target: String!): Body
-    },
-    type Distance {
-        value: Float
-        metric: String
-    }
-    type Body {
-        id: String
-        name: String
-        englishName: String
-        isPlanet: Boolean
-        moons: [Moon]
-        mass: Mass
-        volume: Volume
-        gravity: Float
-        density: Float
-    }
-    type Moon {
-        name: String
-        id: String
-        perihelion: Float
-        aphelion:Float
-        gravity: Float
-        escape: Float
-        mass: Mass
-        volume: Volume
-    }
-    type Mass {
-        massValue: Float
-        massExponent: Float
-    }
-    type Volume {
-        volValue: Float
-        volExponent: Float
-    }
-`);
 
 var getDistance = function(args) { 
     const snakedTargetName = snakecaseName(args.target);
