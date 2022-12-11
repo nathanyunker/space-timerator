@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "convert-units": "^2.3.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.7",
     "lodash": "4.17.15",
